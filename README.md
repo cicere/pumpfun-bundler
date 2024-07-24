@@ -1,4 +1,4 @@
-Welcome to the **Pump.Fun Launch Bundle Tool** – your ultimate solution for bundling on Pump.Fun with advanced profile creation and anti-bubble maps!
+Welcome to the Open-Source **Pump.Fun Bundler** – your ultimate solution for bundling on Pump.Fun with advanced profile creation and anti-bubble maps!
 
 This open-source and free tool offers the most efficient self-bundling script for Pump.Fun, enabling you to launch a token with 20 different wallets and profiles. 
 
