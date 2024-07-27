@@ -6,7 +6,7 @@ This open-source and free tool offers the most efficient self-bundling script fo
 
 Enjoy launches that are completely bubble maps-proof and anti-Photon SB marks.
 
-For more details, join our Dicord at [discord.gg/solana-scripts](https://discord.gg/solana-scripts)
+For more details, join our Discord at [discord.gg/solana-scripts](https://discord.gg/solana-scripts)
 
 
 
