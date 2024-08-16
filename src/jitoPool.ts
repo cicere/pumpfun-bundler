@@ -125,11 +125,6 @@ export async function buyBundle() {
 		.accounts({
 			mint: account1,
 			mintAuthority: account2,
-			bondingCurve: account3,
-			global: account5,
-			mplTokenMetadata: account6,
-			metadata: account7,
-			user: wallet.publicKey,
 			systemProgram: SystemProgram.programId,
 			tokenProgram: spl.TOKEN_PROGRAM_ID,
 			associatedTokenProgram: spl.ASSOCIATED_TOKEN_PROGRAM_ID,
@@ -156,12 +151,6 @@ export async function buyBundle() {
 	const buyIx = await program.methods
 		.buy(amount, solAmount)
 		.accounts({
-			global,
-			feeRecipient,
-			mint: mintKp.publicKey,
-			bondingCurve,
-			associatedUser: ata,
-			user: wallet.publicKey,
 			systemProgram: SystemProgram.programId,
 			tokenProgram: spl.TOKEN_PROGRAM_ID,
 			rent: SYSVAR_RENT_PUBKEY,
@@ -265,12 +254,6 @@ async function createWalletSwaps(
 			const buyIx = await program.methods
 				.buy(amount, solAmount)
 				.accounts({
-					global,
-					feeRecipient,
-					mint,
-					bondingCurve,
-					associatedBondingCurve,
-					user: keypair.publicKey,
 					systemProgram: SystemProgram.programId,
 					tokenProgram: spl.TOKEN_PROGRAM_ID,
 					rent: SYSVAR_RENT_PUBKEY,
@@ -282,8 +265,6 @@ async function createWalletSwaps(
 			instructionsForChunk.push(createTokenAta, buyIx);
 		}
 
-		// ALWAYS SIGN WITH THE FIRST WALLET
-		const keypair = chunk[0];
 
 		const message = new TransactionMessage({
 			payerKey: keypair.publicKey,
@@ -291,11 +272,9 @@ async function createWalletSwaps(
 			instructions: instructionsForChunk,
 		}).compileToV0Message([lut]);
 
-		const versionedTx = new VersionedTransaction(message);
-
-		const serializedMsg = versionedTx.serialize();
-		console.log("Txn size:", serializedMsg.length);
-		if (serializedMsg.length > 1232) {
+		const serializedMsg = message.serialize();
+		console.log("Txn size:", message.length);
+		if (message.length > 1232) {
 			console.log("tx too big");
 		}
 
