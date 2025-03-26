@@ -432,7 +432,7 @@ Join our thriving community of traders and launchers:
 
 - **Discord**: [discord.gg/solana-scripts](https://discord.gg/solana-scripts)
 - **Telegram**: @benorizz0
-- **Email Support**: support@solana-scripts.com
+
 
 Our community features:
 - Daily strategy discussions
