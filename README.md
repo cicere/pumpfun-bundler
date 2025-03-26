@@ -2,6 +2,8 @@
 
 The ultimate open-source solution for efficient token bundling on Pump.Fun with advanced profile creation and anti-bubble map features.
 
+Discord community: https://discord.gg/solana-scripts
+
 ![Pump.Fun Bundler](https://img.shields.io/badge/PumpFun-Bundler-blue)
 ![License](https://img.shields.io/badge/license-MIT-green)
 ![Version](https://img.shields.io/badge/version-2.0-orange)
@@ -12,13 +14,12 @@ Welcome to the **Pump.Fun Bundler** – the tool that's changing the game for So
 
 Born out of frustration with existing tools that either cost a fortune or leave your launches vulnerable to snipers and MEV attacks, we decided to build something better. Something that gives the power back to creators and legitimate community members.
 
-Our journey started with a simple question: "How can we make token launches fair again?" The answer is in your hands now.
+Our journey started with a simple question: "How can we make token launches smooth again?" The answer is in your hands now.
 
 ## 💎 Why Pump.Fun Bundler Stands Apart
 
 Let's be real – the Solana token space is wild. Launches get sniped, bots front-run transactions, and genuine community members get left behind. We've turned the tables with a solution that's:
 
-- **100% Free and Open Source** – Because community matters more than profit
 - **Fully Customizable** – Your launch, your rules
 - **Anti-Sniper by Design** – Keep the bots and front-runners at bay
 - **Profile-Integrated** – Launch with authentic-looking accounts, not obvious bot wallets
@@ -26,8 +27,8 @@ Let's be real – the Solana token space is wild. Launches get sniped, bots fron
 
 ## 🚀 Core Features That Make the Difference
 
-### 💊 Human-Centered UI Experience
-The days of command-line-only tools are over. We've built an intuitive interface that guides you through every step of the launch process. From wallet generation to final selling strategies, everything is accessible through clean, organized menus that make sense even if you're not a coding expert.
+### 💊 Human-Centered CLI-UI Experience
+We've built an intuitive interface that guides you through every step of the launch process. From wallet generation to final selling strategies, everything is accessible through clean, organized menus that make sense even if you're not a coding expert.
 
 Our UI provides real-time feedback on transactions, wallet balances, and market conditions. You'll always know exactly what's happening with your launch at every moment.
 
