@@ -108,6 +108,10 @@ export async function buyBundle() {
 	console.log(`Mint: ${mintKp.publicKey.toBase58()}`);
 
 	const [bondingCurve] = PublicKey.findProgramAddressSync([Buffer.from("bonding-curve"), mintKp.publicKey.toBytes()], program.programId);
+	const [associatedBondingCurve] = PublicKey.findProgramAddressSync(
+		[bondingCurve.toBytes(), spl.TOKEN_PROGRAM_ID.toBytes(), mintKp.publicKey.toBytes()],
+		spl.ASSOCIATED_TOKEN_PROGRAM_ID
+	);
 	const [metadata] = PublicKey.findProgramAddressSync(
 		[Buffer.from("metadata"), MPL_TOKEN_METADATA_PROGRAM_ID.toBytes(), mintKp.publicKey.toBytes()],
 		MPL_TOKEN_METADATA_PROGRAM_ID
@@ -181,7 +185,7 @@ export async function buyBundle() {
 	bundledTxns.push(fullTX);
 
 	// -------- step 3: create swap txns --------
-	const txMainSwaps: VersionedTransaction[] = await createWalletSwaps(blockhash, keypairs, lookupTableAccount, bondingCurve, mintKp.publicKey, program);
+	const txMainSwaps: VersionedTransaction[] = await createWalletSwaps(blockhash, keypairs, lookupTableAccount, bondingCurve, associatedBondingCurve, mintKp.publicKey, program);
 	bundledTxns.push(...txMainSwaps);
 
 	// -------- step 4: send bundle --------
@@ -267,14 +271,15 @@ async function createWalletSwaps(
 
 
 		const message = new TransactionMessage({
-			payerKey: keypair.publicKey,
+			payerKey: payer.publicKey,
 			recentBlockhash: blockhash,
 			instructions: instructionsForChunk,
 		}).compileToV0Message([lut]);
 
+		const versionedTx = new VersionedTransaction(message);
 		const serializedMsg = message.serialize();
-		console.log("Txn size:", message.length);
-		if (message.length > 1232) {
+		console.log("Txn size:", serializedMsg.length);
+		if (serializedMsg.length > 1232) {
 			console.log("tx too big");
 		}
 

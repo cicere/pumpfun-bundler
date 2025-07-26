@@ -4,7 +4,7 @@
 	"description": "https://solana-scripts.com",
 	"main": "index.js",
 	"scripts": {
-		"start": "ts-node jitoPool.ts"
+		"start": "ts-node main.ts"
 	},
 	"author": "https://solana-scripts.com",
 	"license": "ISC",
@@ -33,6 +33,7 @@
 		"path": "^0.12.7",
 		"prompt-sync": "^4.2.0",
 		"protobufjs": "^7.2.6",
+		"rpc-websockets": "^7.5.1",
 		"typescript": "^5.3.3"
 	},
 	"devDependencies": {

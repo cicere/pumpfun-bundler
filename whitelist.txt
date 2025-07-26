@@ -1,0 +1,4 @@
+# Add wallet addresses you want to protect from smart selling
+# Format: pubkey:privkey
+# Example:
+# 7xKXtg2CW87d97TXJSDpbD5jBkheTqA83TZRuJosgAsU:base58_private_key_here
