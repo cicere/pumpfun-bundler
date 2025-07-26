@@ -278,3 +278,5 @@ tokens/
 *.key
 *.cert
 *.crt
+
+mcp.json

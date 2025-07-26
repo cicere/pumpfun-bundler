@@ -10,5 +10,14 @@ When planning to use anything related to schadcn:
 
 Implementation Rule
 When implementing: 
-- First call the demo tool to see how it is used
+- First call the get_component_demo tool to see how it is used
 - Then implement it so that it is implemented correctly
+
+Available tools:
+get_component
+get_component_demo
+list_component
+get_componenet_metadata
+get_directory_stucture
+get_block
+list blocks
